@@ -5,22 +5,11 @@
 <p><b>Demon Host Hub</b> is a modern, animated landing page UI for a VPS/RDP hosting brand — built with Vite, React, TypeScript, Tailwind CSS, and shadcn/ui (Radix UI).</p>
 
 <p>
-  <a href="#quick-start">Quick Start</a>
-  ·
-  <a href="#scripts">Scripts</a>
-  ·
-  <a href="#tech-stack">Tech Stack</a>
-  ·
-  <a href="#preview">Preview</a>
-</p>
-
-<p>
-  <img alt="Vite" src="https://img.shields.io/badge/Vite-5.x-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
-  <img alt="React" src="https://img.shields.io/badge/React-18-149ECA?style=for-the-badge&logo=react&logoColor=white" />
-  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
-  <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind_CSS-3.x-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
-  <img alt="shadcn/ui" src="https://img.shields.io/badge/shadcn%2Fui-components-000000?style=for-the-badge" />
-  <img alt="Radix UI" src="https://img.shields.io/badge/Radix_UI-Primitives-161618?style=for-the-badge&logo=radix-ui&logoColor=white" />
+<img src="https://img.shields.io/badge/Vite-5.x-1f2937?style=for-the-badge&logo=vite&logoColor=ffd369&colorA=020617" />
+<img src="https://img.shields.io/badge/React-18-1f2937?style=for-the-badge&logo=react&logoColor=61dafb&colorA=020617" />
+<img src="https://img.shields.io/badge/TypeScript-5.x-1f2937?style=for-the-badge&logo=typescript&logoColor=4fa3ff&colorA=020617" />
+<img src="https://img.shields.io/badge/Tailwind-3.x-1f2937?style=for-the-badge&logo=tailwindcss&logoColor=38bdf8&colorA=020617" />
+	
 </p>
 </div>
 
