@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Demon VPS Design System - Dark Futuristic Hacker Aesthetic */
+
+@layer base {
+  :root {
+    /* Core Colors - Deep Charcoal & Blood Red */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Blood Red Primary */
+    --primary: 0 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Darker red for secondary */
+    --secondary: 0 100% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 0 100% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom Demon VPS tokens */
+    --demon-charcoal: 0 0% 4%;
+    --demon-charcoal-light: 0 0% 8%;
+    --demon-red: 0 100% 50%;
+    --demon-red-glow: 0 100% 50%;
+    --demon-red-dark: 0 100% 30%;
+    --demon-gray: 0 0% 60%;
+    
+    /* Glassmorphism */
+    --glass-bg: 0 0% 10% / 0.6;
+    --glass-border: 0 0% 20% / 0.3;
+    
+    /* Gradients */
+    --gradient-demon: linear-gradient(135deg, hsl(0 100% 50%) 0%, hsl(0 100% 30%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 6%) 0%, hsl(0 0% 2%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 5%) 100%);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(0 100% 50% / 0.3);
+    --shadow-glow-intense: 0 0 60px hsl(0 100% 50% / 0.5);
+    --shadow-card: 0 10px 40px hsl(0 0% 0% / 0.5);
+
+    /* Sidebar - keeping for compatibility */
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 0 100% 50%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 100% 15%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 0 100% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 100% 50%;
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 0 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  /* Glassmorphism card */
+  .glass-card {
+    @apply relative overflow-hidden rounded-xl;
+    background: linear-gradient(135deg, hsl(var(--demon-charcoal-light)) 0%, hsl(var(--demon-charcoal)) 100%);
+    border: 1px solid hsl(var(--border));
+    backdrop-filter: blur(20px);
+  }
+
+  .glass-card::before {
+    content: '';
+    @apply absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300;
+    background: linear-gradient(135deg, hsl(var(--demon-red) / 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .glass-card:hover::before {
+    @apply opacity-100;
+  }
+
+  .glass-card:hover {
+    border-color: hsl(var(--demon-red) / 0.5);
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Demon glow text */
+  .demon-glow {
+    text-shadow: 0 0 20px hsl(var(--demon-red) / 0.8),
+                 0 0 40px hsl(var(--demon-red) / 0.6),
+                 0 0 60px hsl(var(--demon-red) / 0.4);
+  }
+
+  /* Pulse animation for CTA */
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--demon-red) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--demon-red) / 0.7);
+    }
+  }
+
+  /* Grid background pattern */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Badge styles */
+  .badge-popular {
+    @apply bg-primary text-primary-foreground px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full;
+  }
+
+  .badge-gaming {
+    @apply px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full;
+    background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+    color: white;
+  }
+
+  .badge-ddos {
+    @apply px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full;
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    color: white;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--demon-charcoal));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--demon-red) / 0.5);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--demon-red) / 0.7);
+  }
+}
+
+@layer utilities {
+  .text-gradient-demon {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--demon-red)) 0%, #ff6666 100%);
+  }
+}
