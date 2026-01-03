@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./public/banner.svg" alt="Demon Host Hub" width="100%" />
+<img src="./public/bannerX.svg" alt="Demon Host Hub" width="100%" />
 
 <p><b>Demon Host Hub</b> is a modern, animated landing page UI for a VPS/RDP hosting brand — built with Vite, React, TypeScript, Tailwind CSS, and shadcn/ui (Radix UI).</p>
 
